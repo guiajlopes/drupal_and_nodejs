@@ -66,11 +66,66 @@
 					</ul>
 				</section>
 
-				<section>
+				<section class="fragments">
 					<h2>Em que casos usar Node.js?</h2>
+					<ul>
+						<li class="fragment">RESTFULL API</li>
+						<li class="fragment">Aplicações Real Time</li>
+					</ul>
+				</section>
+
+				<section class="fragments">
+					<h2> Módulo Socket.IO </h2>
+					<ul>
+						<li class="fragment">Utilizado para interação Real Time</li>
+						<li class="fragment">Utiliza Websocket</li>
+						<li class="fragment">Crossbrowser (IE6+)</li>
+					</ul>
 				</section>
 
 				<section>
+					<h2> Principais funções do Socket.IO : </h2>
+					<pre>
+						<code class="hljs javascript">
+							// Evento quando o usuário se conecta.
+							io.on('connection', function(client) {
+
+							});
+
+							// Servidor enviando mensagem para client.
+							client.emit("seu-evento", data);
+
+							// Envia mensagem para os demais clientes.
+							client.broadcast.emit("seu-evento", data)
+
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2> Principais funções do Socket.IO : </h2>
+					<pre>
+						<code class="hljs javascript">
+							// Evento disparado quando usuário desconecta.
+							client.on("disconnect", function() {
+
+							});
+
+							// Evento que o servidor escuta uma ação do cliente
+							client.on("um-evento", function(data) {
+
+							});
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2> Drupal e Node.js </h2>
+					<p> Nodejs Integration : https://www.drupal.org/project/nodejs </p>
+					<p> Views Nodejs : https://www.drupal.org/project/views_nodejs </p>
+				</section>
+
+		  	<section>
 					<h1> Perguntas? </h1>
 				</section>
 
