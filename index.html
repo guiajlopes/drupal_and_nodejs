@@ -111,7 +111,7 @@
 
 							});
 
-							// Evento que o servidor escuta uma ação do cliente
+							// Evento que o servidor escuta uma ação do cliente.
 							client.on("um-evento", function(data) {
 
 							});
@@ -125,6 +125,76 @@
 					<p> Views Nodejs : https://www.drupal.org/project/views_nodejs </p>
 				</section>
 
+				<section class="fragments">
+					<h2>Sobre o módulo Node.js Integration</h2>
+					<ul>
+						<li class="fragment">Utiliza socket.io</li>
+						<li class="fragment">User channels</li>
+						<li class="fragment">Content channels</li>
+						<li class="fragment">PHP API</li>
+						<li class="fragment">Possibilita extender o server</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2> Node.js Integration API </h2>
+						<p> Criando um user channel </p>
+						<pre>
+							<code class="hlphp php">
+									/**
+									 * Implements hook_nodejs_user_channels().
+									 */
+									function hook_nodejs_user_channels($account) {
+									  if ($account->uid > 0) {
+									    return array('nodejs_user_' . $account->uid);
+									  }
+									}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2> Node.js Integration API </h2>
+						<p>Enviando uma mensagem</p>
+						<pre>
+							<code class="hlphp php">
+							  // Build message object.
+							  $message = new stdClass();
+							  $message->channel = 'meu_channel';
+							  $message->callback = 'meu_callback'
+							  $message->data = (object) array(
+							    'body' => 'Sua mensagem',
+							  );
+
+							  nodejs_enqueue_message($message);
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2> Node.js Integration API </h2>
+						<p>Callback da mensagem no Javascript.</p>
+						<pre>
+							<code class="hljs js">
+								(function ($) {
+								  /**
+								   * Drupal.Nodejs.callback
+								   */
+								  Drupal.Nodejs.callbacks.meu_callback = {
+								    callback: function (message) {
+								      if (message.channel == 'meu_channel') {
+								        // Realiza uma ação.
+								      }
+								    }
+								  };
+								}(jQuery));
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h1>Na Prática...</h1>
+				</section>
 		  	<section>
 					<h1> Perguntas? </h1>
 				</section>
