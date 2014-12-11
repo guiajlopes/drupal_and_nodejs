@@ -39,17 +39,20 @@
 	<body>
 
 		<div class="reveal">
-
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Aplicações Real Time com Drupal e Node.js</h2>
-					<br>
+					<h2>Guilherme Lopes</h2>
+					<p> Desenvolvedor Drupal </p>
 					<ul>
 						<li>Github: guiajlopes</li>
 						<li class="mail">Email: guilherme@mmda.com.br</li>
 						<li class="drupal">Drupal.org: guilopes</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Aplicações Real Time com Drupal e Node.js</h2>
 				</section>
 
 				<section>
@@ -69,9 +72,17 @@
 				<section class="fragments">
 					<h2>Em que casos usar Node.js?</h2>
 					<ul>
-						<li class="fragment">RESTFULL API</li>
+						<li class="fragment">Automatização de Tarefas</li>
+						<li class="fragment">Restfull API</li>
 						<li class="fragment">Aplicações Real Time</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2> WebSocket </h2>
+					<p> É uma tecnologia que permite comunicação bidirecional de baixa latência </p>
+
+
 				</section>
 
 				<section class="fragments">
@@ -97,7 +108,6 @@
 
 							// Envia mensagem para os demais clientes.
 							client.broadcast.emit("seu-evento", data)
-
 						</code>
 					</pre>
 				</section>
@@ -136,6 +146,18 @@
 					</ul>
 				</section>
 
+				<section>
+					<section>
+						<h2> Autenticação </h2>
+						<p>Primeira Autenticação</p>
+						<img src="img/diagrama_nodejs_primeira_conexao.png">
+					</section>
+					<section>
+						<h2>Autenticação</h2>
+						<p>Demais Autenticações</p>
+						<img src="img/diagrama_nodejs.png">
+					</section>
+				</section>
 				<section>
 					<section>
 						<h2> Node.js Integration API </h2>
