@@ -81,6 +81,27 @@
 					</ul>
 				</section>
 
+				<section>
+				  <h2>Node.js</h2>
+				  <p>Exemplo de um servidor Nodejs</p>
+					<pre>
+						<code class="hljs javascript">
+						var http = require('http');
+						http.createServer(function(req,res) {
+						  var head = { 'Content-Type': 'text/plain; charset=utf-8' };
+						  res.writeHead(200, head);
+						  res.end('Olá mundo!');
+						}).listen(3000);
+						console.log('Servidor iniciado em localhost:3000.');
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Node.js - Gerenciador de dependências </h2>
+					<p> O Gerenciador de dependências do nodejs é o NPM.</p>
+				</section>
+
 				<section class="fragments">
 					<h2>Em que casos usar Node.js?</h2>
 					<ul>
